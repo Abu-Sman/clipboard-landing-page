@@ -1,0 +1,124 @@
+/////////////////////////////////
+/// VARIABLES
+$color-primary: hsl(171, 66%, 44%);
+$color-secondary: hsl(233, 100%, 69%);
+$color-text: hsl(201, 11%, 66%);
+$color-dark-gray: hsl(210, 10%, 33%);
+$color-white: hsl(0, 0%, 100%);
+
+$section-space-bottom: 15rem;
+
+/////////////////////////////////
+/// MIXINS
+
+/////////////////////////////////
+/// GENERAL STYLES
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Bai Jamjuree", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1;
+  color: $color-text;
+  text-align: center;
+}
+
+.container-small {
+  max-width: 70rem;
+  margin: 0 auto;
+}
+
+.primary-heading {
+  font-size: 4.4rem;
+  color: $color-dark-gray;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.text {
+  line-height: 1.6;
+}
+
+.btnbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  &--btn:link,
+  &--btn:visited {
+    display: inline-block;
+    text-decoration: none;
+    padding: 1.8rem 4rem;
+    color: $color-white;
+    font-size: 1.8rem;
+    border-radius: 100px;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .btn-ios:link,
+  .btn-ios:visited {
+    background-color: $color-primary;
+    box-shadow: 0 1rem 1rem rgba($color-primary, 0.2);
+  }
+
+  .btn-ios:hover,
+  .btn-ios:active {
+    background-color: rgba($color-primary, 0.7);
+  }
+
+  .btn-mac:link,
+  .btn-mac:visited {
+    background-color: $color-secondary;
+    box-shadow: 0 1rem 1rem rgba($color-secondary, 0.2);
+  }
+
+  .btn-mac:hover,
+  .btn-mac:active {
+    background-color: rgba($color-secondary, 0.7);
+  }
+}
+
+/////////////////////////////////
+/// HEADER STYLES
+.header {
+  background-image: url(../images/bg-header-desktop.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 14rem;
+  margin-bottom: $section-space-bottom;
+
+  &--logo {
+    margin-bottom: 5rem;
+  }
+
+  .text {
+    margin-bottom: 4rem;
+  }
+}
+/////////////////////////////////
+/// SECTION TRACK STYLES
+
+/////////////////////////////////
+/// SECTION ACCESS STYLES
+
+/////////////////////////////////
+/// SECTION WORKFLOW STYLES
+
+/////////////////////////////////
+/// SECTION FEATURED STYLES
+
+/////////////////////////////////
+/// SECTION DOWNLOAD STYLES
+
+/////////////////////////////////
+/// FOOTER STYLES
