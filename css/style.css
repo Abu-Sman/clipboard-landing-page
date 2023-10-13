@@ -17,20 +17,42 @@ body {
   text-align: center;
 }
 
+.container-medium,
 .container-small {
-  max-width: 70rem;
   margin: 0 auto;
 }
 
-.primary-heading {
-  font-size: 4.4rem;
+.container-medium {
+  max-width: 120rem;
+}
+
+.container-small {
+  max-width: 70rem;
+}
+
+.primary-heading,
+.secondary-heading,
+.tertiary-heading {
   color: hsl(210, 10%, 33%);
   font-weight: 600;
   margin-bottom: 2rem;
 }
 
+.primary-heading {
+  font-size: 4.4rem;
+}
+
+.secondary-heading {
+  font-size: 3.4rem;
+}
+
+.tertiary-heading {
+  font-size: 1.8rem;
+}
+
 .text {
-  line-height: 1.6;
+  font-size: 1.4rem;
+  line-height: 1.8;
 }
 
 .btnbox {
@@ -70,15 +92,139 @@ body {
 .header {
   background-image: url(../images/bg-header-desktop.png);
   background-repeat: no-repeat;
-  background-size: cover;
   padding-top: 14rem;
   margin-bottom: 15rem;
 }
 .header--logo {
-  margin-bottom: 5rem;
+  margin-bottom: 6rem;
 }
 .header .text {
+  font-size: 1.6rem;
   margin-bottom: 4rem;
+}
+
+.section--track {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 8rem;
+  margin-bottom: 15rem;
+}
+.section--track-box1 .text {
+  font-size: 1.4rem;
+}
+.section--track-box2 {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
+  column-gap: 12rem;
+}
+.section--track-box2 .imgbox {
+  margin-left: -3rem;
+}
+.section--track-box2 .imgbox .img {
+  width: 100%;
+}
+.section--track-box2 .textbox {
+  margin-top: -10%;
+}
+.section--track-box2 .textbox--feature {
+  text-align: left;
+}
+.section--track-box2 .textbox--feature:not(:last-child) {
+  margin-bottom: 6rem;
+}
+.section--track-box2 .textbox--feature .tertiary-heading {
+  margin-bottom: 1.3rem;
+}
+.section--track-box2 .textbox--feature .text {
+  font-size: 1.3rem;
+}
+.section--track .container-medium {
+  margin: 0;
+}
+
+.section--access {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 8rem;
+  margin-bottom: 7rem;
+}
+.section--access-imgbox .img {
+  width: 100%;
+}
+
+.section--workflow {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 6rem;
+  margin-bottom: 15rem;
+}
+.section--workflow-tools {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.section--workflow-tools .tool {
+  padding: 0 5rem;
+  flex: 1;
+}
+.section--workflow-tools .tool .tool-icon {
+  margin-bottom: 4rem;
+}
+.section--workflow-tools .tool:last-child {
+  padding: 0 2rem;
+}
+
+.section--featured {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 15rem;
+}
+
+.section--download {
+  margin-bottom: 15rem;
+}
+.section--download-textbox {
+  margin-bottom: 6rem;
+}
+.footer {
+  text-align: left;
+  background-color: rgba(159, 171, 178, 0.1);
+}
+.footer--box {
+  padding: 4rem;
+  display: flex;
+  align-items: center;
+  gap: 10rem;
+}
+.footer--box-logo {
+  height: 4rem;
+}
+.footer--box-links {
+  display: flex;
+  gap: 4rem;
+}
+.footer--box-links .links {
+  list-style: none;
+}
+.footer--box-links .links > *:not(:last-child) {
+  margin-bottom: 2rem;
+}
+.footer--box-links .links .link {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.4rem;
+}
+.footer--box-icons {
+  margin-left: auto;
+}
+.footer--box-icons .social-icons {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
 }
 
 /*# sourceMappingURL=style.css.map */

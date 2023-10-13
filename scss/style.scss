@@ -32,22 +32,47 @@ body {
   text-align: center;
 }
 
+// containers
+.container-medium,
 .container-small {
-  max-width: 70rem;
   margin: 0 auto;
 }
 
-.primary-heading {
-  font-size: 4.4rem;
+.container-medium {
+  max-width: 120rem;
+}
+
+.container-small {
+  max-width: 70rem;
+}
+
+// typography
+.primary-heading,
+.secondary-heading,
+.tertiary-heading {
   color: $color-dark-gray;
   font-weight: 600;
   margin-bottom: 2rem;
 }
 
-.text {
-  line-height: 1.6;
+.primary-heading {
+  font-size: 4.4rem;
 }
 
+.secondary-heading {
+  font-size: 3.4rem;
+}
+
+.tertiary-heading {
+  font-size: 1.8rem;
+}
+
+.text {
+  font-size: 1.4rem;
+  line-height: 1.8;
+}
+
+// buttons
 .btnbox {
   display: flex;
   justify-content: center;
@@ -93,32 +118,194 @@ body {
 .header {
   background-image: url(../images/bg-header-desktop.png);
   background-repeat: no-repeat;
-  background-size: cover;
+  // background-size: cover;
   padding-top: 14rem;
   margin-bottom: $section-space-bottom;
 
   &--logo {
-    margin-bottom: 5rem;
+    margin-bottom: 6rem;
   }
 
   .text {
+    font-size: 1.6rem;
     margin-bottom: 4rem;
   }
 }
 /////////////////////////////////
 /// SECTION TRACK STYLES
+.section--track {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 8rem;
+  margin-bottom: $section-space-bottom;
+
+  &-box1 {
+    .text {
+      font-size: 1.4rem;
+    }
+  }
+
+  &-box2 {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+    column-gap: 12rem;
+
+    .imgbox {
+      margin-left: -3rem;
+
+      .img {
+        width: 100%;
+      }
+    }
+
+    .textbox {
+      margin-top: -10%;
+
+      &--feature {
+        text-align: left;
+
+        &:not(:last-child) {
+          margin-bottom: 6rem;
+        }
+
+        .tertiary-heading {
+          margin-bottom: 1.3rem;
+        }
+
+        .text {
+          font-size: 1.3rem;
+        }
+      }
+    }
+  }
+
+  .container-medium {
+    margin: 0;
+  }
+}
 
 /////////////////////////////////
 /// SECTION ACCESS STYLES
+.section--access {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 8rem;
+  margin-bottom: calc($section-space-bottom - 8rem);
+
+  &-textbox {
+  }
+
+  &-imgbox {
+    .img {
+      width: 100%;
+    }
+  }
+}
 
 /////////////////////////////////
 /// SECTION WORKFLOW STYLES
+.section--workflow {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 6rem;
+  margin-bottom: $section-space-bottom;
 
+  &-textbox {
+  }
+
+  &-tools {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    // gap: 4rem;
+
+    .tool {
+      padding: 0 5rem;
+      flex: 1;
+
+      .tool-icon {
+        margin-bottom: 4rem;
+      }
+
+      .tertiary-heading {
+      }
+
+      .text {
+      }
+    }
+
+    .tool:last-child {
+      padding: 0 2rem;
+    }
+  }
+}
 /////////////////////////////////
 /// SECTION FEATURED STYLES
+.section--featured {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: $section-space-bottom;
+}
 
 /////////////////////////////////
 /// SECTION DOWNLOAD STYLES
+.section--download {
+  margin-bottom: $section-space-bottom;
 
+  &-textbox {
+    margin-bottom: 6rem;
+  }
+
+  &-btnbox {
+  }
+}
 /////////////////////////////////
 /// FOOTER STYLES
+.footer {
+  text-align: left;
+  background-color: rgba($color-text, 0.1);
+
+  &--box {
+    padding: 4rem;
+    display: flex;
+    align-items: center;
+    gap: 10rem;
+
+    &-logo {
+      height: 4rem;
+    }
+
+    &-links {
+      display: flex;
+      gap: 4rem;
+
+      .links {
+        list-style: none;
+
+        > *:not(:last-child) {
+          margin-bottom: 2rem;
+        }
+
+        .link {
+          display: inline-block;
+          text-decoration: none;
+          color: inherit;
+          font-size: 1.4rem;
+        }
+      }
+    }
+
+    &-icons {
+      margin-left: auto;
+
+      .social-icons {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+      }
+    }
+  }
+}
