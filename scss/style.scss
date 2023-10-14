@@ -7,9 +7,15 @@ $color-dark-gray: hsl(210, 10%, 33%);
 $color-white: hsl(0, 0%, 100%);
 
 $section-space-bottom: 15rem;
+$section-space-bottom-mobile: 12rem;
 
 /////////////////////////////////
 /// MIXINS
+@mixin mobiles {
+  @media screen and (max-width: 50em) {
+    @content;
+  }
+}
 
 /////////////////////////////////
 /// GENERAL STYLES
@@ -33,17 +39,35 @@ body {
 }
 
 // containers
+.container-big,
 .container-medium,
 .container-small {
   margin: 0 auto;
 }
 
+.container-big {
+  max-width: 144rem;
+
+  @include mobiles() {
+    max-width: 100%;
+    padding: 0 4rem;
+  }
+}
+
 .container-medium {
   max-width: 120rem;
+
+  @include mobiles() {
+    max-width: 100%;
+  }
 }
 
 .container-small {
   max-width: 70rem;
+
+  @include mobiles() {
+    max-width: 100%;
+  }
 }
 
 // typography
@@ -57,14 +81,28 @@ body {
 
 .primary-heading {
   font-size: 4.4rem;
+
+  @include mobiles() {
+    font-size: 3rem;
+    line-height: 1.2;
+  }
 }
 
 .secondary-heading {
   font-size: 3.4rem;
+
+  @include mobiles() {
+    font-size: 2.6rem;
+    line-height: 1.2;
+  }
 }
 
 .tertiary-heading {
   font-size: 1.8rem;
+
+  @include mobiles() {
+    font-size: 2rem;
+  }
 }
 
 .text {
@@ -78,6 +116,12 @@ body {
   justify-content: center;
   align-items: center;
   gap: 2rem;
+
+  @include mobiles() {
+    flex-direction: column;
+    width: 100%;
+    align-items: stretch;
+  }
 
   &--btn:link,
   &--btn:visited {
@@ -118,17 +162,33 @@ body {
 .header {
   background-image: url(../images/bg-header-desktop.png);
   background-repeat: no-repeat;
-  // background-size: cover;
+  background-size: cover;
   padding-top: 14rem;
   margin-bottom: $section-space-bottom;
 
+  @include mobiles() {
+    background-image: url(../images/bg-header-mobile.png);
+    background-size: 100%;
+    padding-top: 10rem;
+    margin-bottom: $section-space-bottom-mobile;
+  }
+
   &--logo {
     margin-bottom: 6rem;
+
+    @include mobiles() {
+      height: 10rem;
+    }
   }
 
   .text {
     font-size: 1.6rem;
-    margin-bottom: 4rem;
+    margin-bottom: 6rem;
+
+    @include mobiles() {
+      font-size: 1.5rem;
+      margin-bottom: 4rem;
+    }
   }
 }
 /////////////////////////////////
@@ -138,6 +198,11 @@ body {
   grid-template-columns: 1fr;
   row-gap: 8rem;
   margin-bottom: $section-space-bottom;
+
+  @include mobiles() {
+    row-gap: 5rem;
+    margin-bottom: $section-space-bottom-mobile;
+  }
 
   &-box1 {
     .text {
@@ -151,8 +216,17 @@ body {
     align-items: center;
     column-gap: 12rem;
 
+    @include mobiles() {
+      grid-template-columns: 1fr;
+      row-gap: 6rem;
+    }
+
     .imgbox {
       margin-left: -3rem;
+
+      @include mobiles() {
+        margin: 0;
+      }
 
       .img {
         width: 100%;
@@ -160,13 +234,21 @@ body {
     }
 
     .textbox {
+      text-align: left;
       margin-top: -10%;
 
-      &--feature {
-        text-align: left;
+      @include mobiles() {
+        text-align: center;
+        margin: 0;
+      }
 
+      &--feature {
         &:not(:last-child) {
           margin-bottom: 6rem;
+
+          @include mobiles() {
+            margin-bottom: 4rem;
+          }
         }
 
         .tertiary-heading {
@@ -175,6 +257,10 @@ body {
 
         .text {
           font-size: 1.3rem;
+
+          @include mobiles() {
+            font-size: 1.4rem;
+          }
         }
       }
     }
@@ -191,7 +277,12 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 8rem;
-  margin-bottom: calc($section-space-bottom - 8rem);
+  margin-bottom: calc($section-space-bottom - 3rem);
+
+  @include mobiles() {
+    row-gap: 5rem;
+    margin-bottom: calc($section-space-bottom-mobile - 3rem);
+  }
 
   &-textbox {
   }
@@ -211,6 +302,11 @@ body {
   row-gap: 6rem;
   margin-bottom: $section-space-bottom;
 
+  @include mobiles() {
+    margin-bottom: $section-space-bottom-mobile;
+    row-gap: 8rem;
+  }
+
   &-textbox {
   }
 
@@ -218,14 +314,26 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    // gap: 4rem;
+
+    @include mobiles() {
+      flex-direction: column;
+      gap: 6rem;
+    }
 
     .tool {
       padding: 0 5rem;
       flex: 1;
 
+      @include mobiles() {
+        padding: 0;
+      }
+
       .tool-icon {
         margin-bottom: 4rem;
+
+        @include mobiles() {
+          margin-bottom: 3rem;
+        }
       }
 
       .tertiary-heading {
@@ -247,6 +355,18 @@ body {
   align-items: center;
   justify-content: space-around;
   margin-bottom: $section-space-bottom;
+
+  @include mobiles() {
+    flex-direction: column;
+    gap: 5rem;
+    margin-bottom: $section-space-bottom-mobile;
+  }
+
+  &-logo {
+    @include mobiles() {
+      height: 3rem;
+    }
+  }
 }
 
 /////////////////////////////////
@@ -254,8 +374,16 @@ body {
 .section--download {
   margin-bottom: $section-space-bottom;
 
+  @include mobiles() {
+    margin-bottom: $section-space-bottom-mobile;
+  }
+
   &-textbox {
     margin-bottom: 6rem;
+
+    @include mobiles() {
+      margin-bottom: 4rem;
+    }
   }
 
   &-btnbox {
@@ -267,11 +395,20 @@ body {
   text-align: left;
   background-color: rgba($color-text, 0.1);
 
+  @include mobiles() {
+    text-align: center;
+  }
+
   &--box {
     padding: 4rem;
     display: flex;
     align-items: center;
     gap: 10rem;
+
+    @include mobiles() {
+      flex-direction: column;
+      gap: 4rem;
+    }
 
     &-logo {
       height: 4rem;
@@ -280,6 +417,11 @@ body {
     &-links {
       display: flex;
       gap: 4rem;
+
+      @include mobiles() {
+        flex-direction: column;
+        row-gap: 2rem;
+      }
 
       .links {
         list-style: none;
@@ -299,6 +441,10 @@ body {
 
     &-icons {
       margin-left: auto;
+
+      @include mobiles() {
+        margin: 0;
+      }
 
       .social-icons {
         list-style: none;

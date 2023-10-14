@@ -17,17 +17,38 @@ body {
   text-align: center;
 }
 
+.container-big,
 .container-medium,
 .container-small {
   margin: 0 auto;
 }
 
+.container-big {
+  max-width: 144rem;
+}
+@media screen and (max-width: 50em) {
+  .container-big {
+    max-width: 100%;
+    padding: 0 4rem;
+  }
+}
+
 .container-medium {
   max-width: 120rem;
+}
+@media screen and (max-width: 50em) {
+  .container-medium {
+    max-width: 100%;
+  }
 }
 
 .container-small {
   max-width: 70rem;
+}
+@media screen and (max-width: 50em) {
+  .container-small {
+    max-width: 100%;
+  }
 }
 
 .primary-heading,
@@ -41,13 +62,30 @@ body {
 .primary-heading {
   font-size: 4.4rem;
 }
+@media screen and (max-width: 50em) {
+  .primary-heading {
+    font-size: 3rem;
+    line-height: 1.2;
+  }
+}
 
 .secondary-heading {
   font-size: 3.4rem;
 }
+@media screen and (max-width: 50em) {
+  .secondary-heading {
+    font-size: 2.6rem;
+    line-height: 1.2;
+  }
+}
 
 .tertiary-heading {
   font-size: 1.8rem;
+}
+@media screen and (max-width: 50em) {
+  .tertiary-heading {
+    font-size: 2rem;
+  }
 }
 
 .text {
@@ -60,6 +98,13 @@ body {
   justify-content: center;
   align-items: center;
   gap: 2rem;
+}
+@media screen and (max-width: 50em) {
+  .btnbox {
+    flex-direction: column;
+    width: 100%;
+    align-items: stretch;
+  }
 }
 .btnbox--btn:link, .btnbox--btn:visited {
   display: inline-block;
@@ -92,15 +137,35 @@ body {
 .header {
   background-image: url(../images/bg-header-desktop.png);
   background-repeat: no-repeat;
+  background-size: cover;
   padding-top: 14rem;
   margin-bottom: 15rem;
+}
+@media screen and (max-width: 50em) {
+  .header {
+    background-image: url(../images/bg-header-mobile.png);
+    background-size: 100%;
+    padding-top: 10rem;
+    margin-bottom: 12rem;
+  }
 }
 .header--logo {
   margin-bottom: 6rem;
 }
+@media screen and (max-width: 50em) {
+  .header--logo {
+    height: 10rem;
+  }
+}
 .header .text {
   font-size: 1.6rem;
-  margin-bottom: 4rem;
+  margin-bottom: 6rem;
+}
+@media screen and (max-width: 50em) {
+  .header .text {
+    font-size: 1.5rem;
+    margin-bottom: 4rem;
+  }
 }
 
 .section--track {
@@ -108,6 +173,12 @@ body {
   grid-template-columns: 1fr;
   row-gap: 8rem;
   margin-bottom: 15rem;
+}
+@media screen and (max-width: 50em) {
+  .section--track {
+    row-gap: 5rem;
+    margin-bottom: 12rem;
+  }
 }
 .section--track-box1 .text {
   font-size: 1.4rem;
@@ -118,26 +189,51 @@ body {
   align-items: center;
   column-gap: 12rem;
 }
+@media screen and (max-width: 50em) {
+  .section--track-box2 {
+    grid-template-columns: 1fr;
+    row-gap: 6rem;
+  }
+}
 .section--track-box2 .imgbox {
   margin-left: -3rem;
+}
+@media screen and (max-width: 50em) {
+  .section--track-box2 .imgbox {
+    margin: 0;
+  }
 }
 .section--track-box2 .imgbox .img {
   width: 100%;
 }
 .section--track-box2 .textbox {
+  text-align: left;
   margin-top: -10%;
 }
-.section--track-box2 .textbox--feature {
-  text-align: left;
+@media screen and (max-width: 50em) {
+  .section--track-box2 .textbox {
+    text-align: center;
+    margin: 0;
+  }
 }
 .section--track-box2 .textbox--feature:not(:last-child) {
   margin-bottom: 6rem;
+}
+@media screen and (max-width: 50em) {
+  .section--track-box2 .textbox--feature:not(:last-child) {
+    margin-bottom: 4rem;
+  }
 }
 .section--track-box2 .textbox--feature .tertiary-heading {
   margin-bottom: 1.3rem;
 }
 .section--track-box2 .textbox--feature .text {
   font-size: 1.3rem;
+}
+@media screen and (max-width: 50em) {
+  .section--track-box2 .textbox--feature .text {
+    font-size: 1.4rem;
+  }
 }
 .section--track .container-medium {
   margin: 0;
@@ -147,7 +243,13 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 8rem;
-  margin-bottom: 7rem;
+  margin-bottom: 12rem;
+}
+@media screen and (max-width: 50em) {
+  .section--access {
+    row-gap: 5rem;
+    margin-bottom: 9rem;
+  }
 }
 .section--access-imgbox .img {
   width: 100%;
@@ -159,17 +261,39 @@ body {
   row-gap: 6rem;
   margin-bottom: 15rem;
 }
+@media screen and (max-width: 50em) {
+  .section--workflow {
+    margin-bottom: 12rem;
+    row-gap: 8rem;
+  }
+}
 .section--workflow-tools {
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
+@media screen and (max-width: 50em) {
+  .section--workflow-tools {
+    flex-direction: column;
+    gap: 6rem;
+  }
+}
 .section--workflow-tools .tool {
   padding: 0 5rem;
   flex: 1;
 }
+@media screen and (max-width: 50em) {
+  .section--workflow-tools .tool {
+    padding: 0;
+  }
+}
 .section--workflow-tools .tool .tool-icon {
   margin-bottom: 4rem;
+}
+@media screen and (max-width: 50em) {
+  .section--workflow-tools .tool .tool-icon {
+    margin-bottom: 3rem;
+  }
 }
 .section--workflow-tools .tool:last-child {
   padding: 0 2rem;
@@ -181,16 +305,43 @@ body {
   justify-content: space-around;
   margin-bottom: 15rem;
 }
+@media screen and (max-width: 50em) {
+  .section--featured {
+    flex-direction: column;
+    gap: 5rem;
+    margin-bottom: 12rem;
+  }
+}
+@media screen and (max-width: 50em) {
+  .section--featured-logo {
+    height: 3rem;
+  }
+}
 
 .section--download {
   margin-bottom: 15rem;
 }
+@media screen and (max-width: 50em) {
+  .section--download {
+    margin-bottom: 12rem;
+  }
+}
 .section--download-textbox {
   margin-bottom: 6rem;
+}
+@media screen and (max-width: 50em) {
+  .section--download-textbox {
+    margin-bottom: 4rem;
+  }
 }
 .footer {
   text-align: left;
   background-color: rgba(159, 171, 178, 0.1);
+}
+@media screen and (max-width: 50em) {
+  .footer {
+    text-align: center;
+  }
 }
 .footer--box {
   padding: 4rem;
@@ -198,12 +349,24 @@ body {
   align-items: center;
   gap: 10rem;
 }
+@media screen and (max-width: 50em) {
+  .footer--box {
+    flex-direction: column;
+    gap: 4rem;
+  }
+}
 .footer--box-logo {
   height: 4rem;
 }
 .footer--box-links {
   display: flex;
   gap: 4rem;
+}
+@media screen and (max-width: 50em) {
+  .footer--box-links {
+    flex-direction: column;
+    row-gap: 2rem;
+  }
 }
 .footer--box-links .links {
   list-style: none;
@@ -219,6 +382,11 @@ body {
 }
 .footer--box-icons {
   margin-left: auto;
+}
+@media screen and (max-width: 50em) {
+  .footer--box-icons {
+    margin: 0;
+  }
 }
 .footer--box-icons .social-icons {
   list-style: none;
